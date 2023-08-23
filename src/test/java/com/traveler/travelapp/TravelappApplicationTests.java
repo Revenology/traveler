@@ -1,4 +1,4 @@
-package com.revenology.travelapp;
+package com.traveler.travelapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
