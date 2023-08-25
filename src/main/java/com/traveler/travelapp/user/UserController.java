@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+//http://localhost:8080/users/users
 @RestController
 @RequestMapping(value="/users")
 public class UserController {
@@ -18,6 +20,10 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
+    //create new login request entity
+    // @PostMapping("/login")
+    // User getUserByUserNamePassword(@RequestBody User user){
+    // }
     
     @GetMapping("/users")
     List<User> users(){

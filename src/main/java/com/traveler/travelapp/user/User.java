@@ -9,13 +9,17 @@ public class User {
     private @Id @GeneratedValue Long id;
     private String name;
     private String userName;
-    private String passWord;
+    private String password;
 
     //Constructor
-    public User(String name, String userName, String passWord) {
+    public User(String name, String userName, String password) {
         this.name = name;
         this.userName = userName;
-        this.passWord = passWord;
+        this.password = password;
+    }
+    public User(String userName, String password){
+        this.userName = userName;
+        this.password = password;
     }
 
     //Setters and getters
@@ -31,10 +35,10 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String passWord) {
+        this.password = passWord;
     }
 }
