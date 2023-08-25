@@ -11,12 +11,15 @@ public class User {
     private String userName;
     private String password;
 
-    //Constructor
+    //Constructors
+    public User (){}
+    
     public User(String name, String userName, String password) {
         this.name = name;
         this.userName = userName;
         this.password = password;
     }
+
     public User(String userName, String password){
         this.userName = userName;
         this.password = password;

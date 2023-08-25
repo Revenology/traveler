@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.traveler.travelapp.loginRequest.LoginRequest;
+
 
 //http://localhost:8080/users/users
 @RestController
@@ -20,10 +22,13 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    //create new login request entity
-    // @PostMapping("/login")
-    // User getUserByUserNamePassword(@RequestBody User user){
-    // }
+    //Will change the return types to response entites at some point 
+    @PostMapping("/login")
+    User getUserByUserNamePassword(@RequestBody LoginRequest loginRequest){
+        User user = userRepository.findUserByUserName(loginRequest.getUserName());
+        //validate password matches
+        return user;
+    }
     
     @GetMapping("/users")
     List<User> users(){
