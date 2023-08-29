@@ -1,5 +1,6 @@
 package com.traveler.travelapp.user;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,8 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    private @Id @GeneratedValue Long id;
-    private String name;
-    private String userName;
-    private String password;
+    private @Column(name = "id") @Id @GeneratedValue Long id;
+    private @Column(name = "name") String name;
+    private @Column(name = "user_name") String userName;
+    private @Column(name = "password") String password;
 }
