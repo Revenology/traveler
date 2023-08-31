@@ -21,7 +21,7 @@ import lombok.AllArgsConstructor;
 public class UserController {
     
     private final UserService userService;
-    //Will change the return types to response entites at some point 
+    //Will change the return types to response entities at some point 
     @PostMapping("/login")
     ResponseEntity<User> getUserByUserNamePassword(@RequestBody LoginRequest loginRequest){
         return userService.findUserByUserName(loginRequest);
