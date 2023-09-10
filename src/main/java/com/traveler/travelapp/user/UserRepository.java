@@ -1,6 +1,10 @@
 package com.traveler.travelapp.user;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findUserByUserName(String userName);
+import reactor.core.publisher.Mono;
+
+@Repository
+public interface UserRepository extends ReactiveCrudRepository<User, Long> {
+    Mono<User> findUserByUserName(String userName);
 }

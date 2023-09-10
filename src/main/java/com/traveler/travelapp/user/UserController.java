@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.traveler.travelapp.loginRequest.LoginRequest;
 
 import lombok.AllArgsConstructor;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 
 //http://localhost:8080/users/users
@@ -23,18 +25,18 @@ public class UserController {
     private final UserService userService;
     //Will change the return types to response entities at some point 
     @PostMapping("/login")
-    ResponseEntity<User> getUserByUserNamePassword(@RequestBody LoginRequest loginRequest){
+    public Mono<User> getUserByUserNamePassword(@RequestBody LoginRequest loginRequest){
         return userService.findUserByUserName(loginRequest);
     }
     
     @GetMapping("/users")
-    ResponseEntity<List<User>> users(){
+    public Flux<User> users(){
         return userService.findAllUsers();
     }
 
     @PostMapping("/users")
-    ResponseEntity<User> newUser(@RequestBody User user){
-        return userService.CreateNewUser(user);
+    public Mono<User> newUser(@RequestBody User user){
+        return userService.createUser(user);
     }
 
 }

@@ -23,4 +23,5 @@ public class User {
     private @Column(name = "password") String password;
     private @Column(name = "email") String email;
     private @Column(name = "date_of_birth") Date dateOfBirth;
+    
 }
